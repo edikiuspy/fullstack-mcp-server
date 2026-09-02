@@ -45,7 +45,9 @@ const handler = createMcpHandler((server) => {
     {
       title: "Lista Todo",
       description: "Zwraca wszystkie elementy Todo.",
-      inputSchema: z.object({}),
+      inputSchema: z.object({
+        todo: z.string(),
+      }),
     },
     () => runTool(async () => result(await listTodos())),
   );
